@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-deployment
+  labels:
+    app: springboot
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: springboot
+  template:
+    metadata:
+      labels:
+        app: springboot
+    spec:
+      containers:
+        - name: api-test
+          image: iaktech/api-test:1.2
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_HOST
+              value: mysql
+            - name: DB_NAME
+              value: test
+            - name: DB_USERNAME
+              value: root
+            - name: DB_PASSWORD
+              value: password
+
