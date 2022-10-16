@@ -1,0 +1,10 @@
+Docker commands
+Build image: docker build -t <image-name> .
+Push to hub: docker push repo-name/image-name
+
+Kubernates
+Apply files: kubectl apply -f <file-location>
+
+MINIKUBE
+minikube start
+Startup the service: minikube service <service-name>
